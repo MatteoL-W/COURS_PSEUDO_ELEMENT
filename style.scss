@@ -14,6 +14,13 @@ html {
   font-size: 1em;
 }
 
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+}
+
 .section {
   min-height: 100vh;
   height: 100%;
@@ -31,8 +38,19 @@ html {
   }
 }
 
+.section.gare {
+  background: rgba(138, 138, 138, 1);
+  color: white;
+  padding-bottom: 20vh;
+
+  .right {
+    color: #21708a;
+  }
+}
+
 .title {
   padding-top: 20vh;
+  padding-bottom: 5vh;
   font-size: 2.5rem;
   font-weight: 600;
 }
@@ -53,18 +71,26 @@ p.right {
   font-weight: 500;
 }
 
-
 .transition {
   display: flex;
+  flex-direction: row;
+  width: 300vw;
   height: 100vh;
 
   .default {
     flex-shrink: 0;
+    height: 100%;
     width: 100vw;
   }
   .gradient {
     flex-shrink: 0;
+    height: 100%;
     width: 200vw;
+  }
+  .new {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100vw;
   }
 }
 
@@ -75,4 +101,11 @@ p.right {
   .gradient {
     background: linear-gradient(90deg, rgba(71, 71, 71, 1) 0%, rgba(138, 138, 138, 1) 100%);
   }
+  .new {
+    background: rgba(138, 138, 138, 1);
+  }
+}
+
+.container {
+  overflow: hidden !important;
 }

@@ -13,6 +13,13 @@ html {
   font-size: 1em;
 }
 
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+}
+
 .section {
   min-height: 100vh;
   height: 100%;
@@ -29,8 +36,18 @@ html {
   color: #4fb9ea;
 }
 
+.section.gare {
+  background: #8a8a8a;
+  color: white;
+  padding-bottom: 20vh;
+}
+.section.gare .right {
+  color: #21708a;
+}
+
 .title {
   padding-top: 20vh;
+  padding-bottom: 5vh;
   font-size: 2.5rem;
   font-weight: 600;
 }
@@ -53,15 +70,24 @@ p.right {
 
 .transition {
   display: flex;
+  flex-direction: row;
+  width: 300vw;
   height: 100vh;
 }
 .transition .default {
   flex-shrink: 0;
+  height: 100%;
   width: 100vw;
 }
 .transition .gradient {
   flex-shrink: 0;
+  height: 100%;
   width: 200vw;
+}
+.transition .new {
+  flex-shrink: 0;
+  height: 100%;
+  width: 100vw;
 }
 
 .transition.toGare .default {
@@ -69,6 +95,13 @@ p.right {
 }
 .transition.toGare .gradient {
   background: linear-gradient(90deg, #474747 0%, #8a8a8a 100%);
+}
+.transition.toGare .new {
+  background: #8a8a8a;
+}
+
+.container {
+  overflow: hidden !important;
 }
 
 /*# sourceMappingURL=style.css.map */
