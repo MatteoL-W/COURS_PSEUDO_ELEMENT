@@ -10,98 +10,93 @@ html, body {
 }
 
 html {
-  font-size: 1em;
+  font-size: 10px;
 }
 
 body {
-  overflow-x: hidden;
-  max-width: 100%;
-  width: 100%;
-  overscroll-behavior: none;
+  --background: #2e2e2e;
+  --color: #d8d8d8;
+  --highlighted: #1fc8aa;
 }
 
-.section {
-  min-height: 100vh;
-  height: 100%;
-  width: 100vw;
-  padding-left: 10vw;
-  padding-right: 10vw;
+body.gare {
+  --background: #d8d8d8;
+  --color: #2e2e2e;
+  --highlighted: #c03b3b;
 }
 
-.section.froid {
-  background: #474747;
-  color: white;
-}
-.section.froid .right {
-  color: #4fb9ea;
+body.rer {
+  --background: #c03b3b;
+  --color: #d8d8d8;
+  --highlighted: #36aed6;
 }
 
-.section.gare {
-  background: #8a8a8a;
-  color: white;
-  padding-bottom: 20vh;
-}
-.section.gare .right {
-  color: #21708a;
+body.soleil {
+  --background: #ffeaea;
+  --color: #444444;
+  --highlighted: #e36d0e;
 }
 
-.title {
-  padding-top: 20vh;
-  padding-bottom: 5vh;
-  font-size: 2.5rem;
-  font-weight: 600;
-}
-
-p.left {
-  width: 50%;
-  font-size: 1.4rem;
-  margin: 0;
-  padding: 0;
-}
-
-p.right {
-  text-align: right;
-  width: auto;
-  margin-top: 7vh;
-  margin-bottom: 7vh;
-  font-size: 1.7rem;
-  font-weight: 500;
-}
-
-.transition {
-  display: flex;
-  flex-direction: row;
-  width: 300vw;
-  height: 100vh;
-}
-.transition .default {
-  flex-shrink: 0;
-  height: 100%;
-  width: 100vw;
-}
-.transition .gradient {
-  flex-shrink: 0;
-  height: 100%;
-  width: 200vw;
-}
-.transition .new {
-  flex-shrink: 0;
-  height: 100%;
-  width: 100vw;
-}
-
-.transition.toGare .default {
-  background: #474747;
-}
-.transition.toGare .gradient {
-  background: linear-gradient(90deg, #474747 0%, #8a8a8a 100%);
-}
-.transition.toGare .new {
-  background: #8a8a8a;
+body.cours {
+  --background: #ffe8b6;
+  --color: #444444;
+  --highlighted: #e36d0e;
 }
 
 .container {
-  overflow: hidden !important;
+  background: var(--background);
+  color: var(--color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+span {
+  color: var(--highlighted);
+}
+
+section {
+  min-height: 100vh;
+  padding-top: 10vh;
+}
+section > div {
+  padding: 0 10vw;
+  width: 63%;
+}
+
+.title {
+  position: relative;
+  font-size: 7.5rem;
+  font-weight: 800;
+}
+
+strong {
+  font-size: 5.5rem;
+  display: block;
+}
+
+p {
+  font-size: 4.5rem;
+  margin: 0;
+  padding: 1em 0;
+}
+
+.overlay {
+  position: relative;
+}
+.overlay:after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 150px;
+  height: 2px;
+  background: var(--color);
+}
+
+.transition {
+  margin: 30px auto;
+  height: 300px;
+  width: 2px;
+  background: var(--color);
 }
 
 /*# sourceMappingURL=style.css.map */

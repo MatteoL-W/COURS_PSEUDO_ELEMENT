@@ -28,31 +28,22 @@ ScrollTrigger.scrollerProxy(pageContainer, {
 ////////////////////////////////////
 ////////////////////////////////////
 window.addEventListener("load", function () {
+    let allSections = gsap.utils.toArray('section');
+    allSections.forEach((section) => {
+        let className = section.className;
 
-    let allPins = gsap.utils.toArray(".transition");
-    allPins.forEach((item) => {
-        console.log(item.classList)
-    })
-
-    let pinWrap = document.querySelector(".transition.toGare");
-    let pinWrapWidth = pinWrap.offsetWidth;
-    let horizontalScrollLength = pinWrapWidth - window.innerWidth;
-    console.log(horizontalScrollLength)
-
-    gsap.to(".transition.toGare", {
-        scrollTrigger: {
-            scroller: pageContainer, //locomotive-scroll
+        ScrollTrigger.create({
+            trigger: 'section.' + className,
+            scroller: pageContainer,
             scrub: true,
-            trigger: ".sectionPin",
-            pin: true,
             markers: true,
-            // anticipatePin: 1,
-            start: "top top",
-            end: pinWrapWidth,
-        },
-        x: -(horizontalScrollLength),
-        ease: "none"
-    });
+            start: 'top center',
+            toggleClass: {
+                targets: "body",
+                className: className
+            }
+        })
+    })
 
     ScrollTrigger.addEventListener("refresh", () => scroller.update()); //locomotive-scroll
 
