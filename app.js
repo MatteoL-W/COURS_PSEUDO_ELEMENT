@@ -28,27 +28,27 @@ ScrollTrigger.scrollerProxy(pageContainer, {
 ////////////////////////////////////
 ////////////////////////////////////
 window.addEventListener("load", function () {
-    let pinBoxes = document.querySelectorAll(".pin-wrap > *");
-    let pinWrap = document.querySelector(".pin-wrap");
-    let pinWrapWidth = pinWrap.offsetWidth;
-    let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+    // let pinBoxes = document.querySelectorAll(".pin-wrap > *");
+    // let pinWrap = document.querySelector(".pin-wrap");
+    // let pinWrapWidth = pinWrap.offsetWidth;
+    // let horizontalScrollLength = pinWrapWidth - window.innerWidth;
 
     // Pinning and horizontal scrolling
 
-    gsap.to(".pin-wrap", {
-        scrollTrigger: {
-            scroller: pageContainer, //locomotive-scroll
-            scrub: true,
-            trigger: "#sectionPin",
-            pin: true,
-            markers: true,
-            // anticipatePin: 1,
-            start: "top top",
-            end: pinWrapWidth
-        },
-        x: -horizontalScrollLength,
-        ease: "none"
-    });
+    // gsap.to(".pin-wrap", {
+    //     scrollTrigger: {
+    //         scroller: pageContainer, //locomotive-scroll
+    //         scrub: true,
+    //         trigger: "#sectionPin",
+    //         pin: true,
+    //         markers: true,
+    //         // anticipatePin: 1,
+    //         start: "top top",
+    //         end: pinWrapWidth
+    //     },
+    //     x: -horizontalScrollLength,
+    //     ease: "none"
+    // });
 
     ScrollTrigger.addEventListener("refresh", () => scroller.update()); //locomotive-scroll
 
