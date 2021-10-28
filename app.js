@@ -28,6 +28,21 @@ ScrollTrigger.scrollerProxy(pageContainer, {
 ////////////////////////////////////
 ////////////////////////////////////
 window.addEventListener("load", function () {
+    let allBigPhrases = gsap.utils.toArray('strong');
+    allBigPhrases.forEach((phrase) => {
+        gsap.to(phrase, {
+            scrollTrigger: {
+                trigger: phrase,
+                scroller: pageContainer,
+                scrub: true,
+                start: 'top 80%',
+                markers: true,
+            },
+            opacity: 100,
+            ease: "power1.inOut"
+        })
+    });
+
     let allSections = gsap.utils.toArray('section');
     allSections.forEach((section) => {
         let className = section.className;
@@ -36,7 +51,6 @@ window.addEventListener("load", function () {
             trigger: 'section.' + className,
             scroller: pageContainer,
             scrub: true,
-            markers: true,
             start: 'top center',
             toggleClass: {
                 targets: "body",
