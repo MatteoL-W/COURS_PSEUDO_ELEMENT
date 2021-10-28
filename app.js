@@ -5,9 +5,9 @@ const scroller = new LocomotiveScroll({
     el: pageContainer,
     smooth: true,
     multiplier: 0.3,
-    // smartphone: {
-    //     smooth: true
-    // }
+    smartphone: {
+        smooth: true
+    }
 });
 
 scroller.on("scroll", ScrollTrigger.update);
@@ -61,6 +61,21 @@ window.addEventListener("load", function () {
             }
         })
     })
+
+    let allInc = gsap.utils.toArray('.inc');
+    allInc.forEach((strong) => {
+        gsap.fromTo(strong, {
+            x: 100
+        }, {
+            scrollTrigger: {
+                trigger: strong,
+                scroller: pageContainer,
+                scrub: true,
+                start: 'top 85%',
+            },
+            x: 0,
+        })
+    });
 
     ScrollTrigger.addEventListener("refresh", () => scroller.update()); //locomotive-scroll
 
