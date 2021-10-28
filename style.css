@@ -80,19 +80,6 @@ p {
   padding: 1em 0;
 }
 
-.overlay {
-  position: relative;
-}
-.overlay:after {
-  content: "";
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 10%;
-  height: 0;
-  background: var(--color);
-}
-
 .transition {
   height: 300px;
 }
