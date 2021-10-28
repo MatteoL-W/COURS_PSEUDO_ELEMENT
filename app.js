@@ -4,6 +4,7 @@ const pageContainer = document.querySelector("[data-scroll-container]");
 const scroller = new LocomotiveScroll({
     el: pageContainer,
     smooth: true,
+    multiplier: 0.3
 });
 
 scroller.on("scroll", ScrollTrigger.update);
@@ -35,7 +36,7 @@ window.addEventListener("load", function () {
                 trigger: phrase,
                 scroller: pageContainer,
                 scrub: true,
-                start: 'top 80%',
+                start: 'top 85%',
                 markers: true,
             },
             opacity: 100,
