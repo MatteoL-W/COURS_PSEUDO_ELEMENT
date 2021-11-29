@@ -14,194 +14,131 @@
 <div class="container" data-scroll-container>
     <section class="froid" data-scroll-section>
         <div class="overlay">
-            <div class="title">
-                Ah, il commence à faire <span>froid</span>.
-            </div>
+            <h3 class="title">
+                Les pseudo-elements
+            </h3>
 
-            <p>
-                On est seulement le cinq novembre, il est <span>huit heures vingt</span>, je suis
-                sorti de mon immeuble depuis cinq
-                minutes et je ne sens déjà plus mes mains. Oui, je n'ai toujours pas de gants et j'aurais peut-être dû
-                mettre un plus gros blouson.
+            <blockquote cite="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-elements">
+                <p>
+                    Un <span class="highlighted">pseudo-élément</span> est un mot-clé ajouté à un sélecteur qui permet
+                    de mettre en forme certaines parties
+                    de l'élément ciblé par la règle. Ainsi, le pseudo-élément <br><span
+                        class="highlighted">::first-line</span> permettra de ne cibler que la
+                    première ligne d'un élément visé par le sélecteur.
+                </p>
+                <figcaption>MDN Mozilla</figcaption>
+
+            </blockquote>
+
+            <strong>Utilisation de ::first-line</strong>
+
+            <code>p::first-line {
+    color: var(--highlighted);
+}</code>
+
+            <strong>Résultat</strong>
+            <p class="firstLine">
+                Démonstration du pseudo-element ::first-line !<br>C'est super trop cool !!!!!
             </p>
 
-            <strong>Mais c'est trop <span>tôt</span> encore.</strong>
+            <div class="divider"></div>
 
-            <p>
-                Je pense que ça me rendrait vraiment triste de déjà commencer à m'équiper comme en <span>hiver</span>.
-                Je ne sais pas, je devrais essayer.
-            </p>
-            <p>
-                Paradoxalement, j'admire vraiment les gens qui pensent déjà à prendre des gants
-                à cette période de l'année. <b>Des surhommes</b>.
-            </p>
+            <p style="margin: 70px 0 0;padding: 0;">Autre pseudo-éléments:</p>
+            <ul>
+                <li style="font-weight: bold">::first-letter</li>
+                <li style="font-weight: bold">::placeholder</li>
+                <li style="font-weight: bold">::after et ::before ♥</li>
+                <li style="font-weight: bold">::marker (expérimental)</li>
+                <li style="font-weight: bold">::selection</li>
+                <li>::cue</li>
+                <li>::backdrop (expérimental)</li>
+                <li>::grammar-error (expérimental)</li>
+                <li>::spelling-error (expérimental)</li>
+            </ul>
+
+            <strong>Attention à ne pas confondre les <a class="highlighted"
+                                                        href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-elements">pseudo-éléments</a>
+                et les <br><a class="highlighted" href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes">pseudo-classes</a>
+                !</strong>
+
+            <div class="divider"></div>
+
+            <h3 class="title">
+                Focus sur ::after & ::before
+            </h3>
+
+            <blockquote cite="https://developer.mozilla.org/fr/docs/Web/CSS/::after">
+                <p>
+                    En CSS, ::after crée un pseudo-élément qui sera le<br><span class="highlighted">dernier enfant de l'élément sélectionné</span>. Il
+                    est souvent utilisé pour ajouter du contenu <span class="highlighted">cosmétique</span> à un élément, en utilisant la propriété CSS
+                    content.
+                </p>
+                <figcaption>MDN Mozilla</figcaption>
+            </blockquote>
+
+            <p>Le ::before fonctionne de la même manière mais sera le<br><span class="highlighted">premier enfant de l'élément sélectionné</span>.</p>
+
+            <strong>Traduction ?</strong>
+
+            <img src="img/after_illu.png">
+            <p>Le pseudo-élément after apparaît bien <b>en DERNIER</b> à l'intérieur de l'élement.</p>
+
+            <strong>Pourquoi ne pas juste créer un élément HTML à la place ?</strong>
+
+            <ul>
+                <li>Gain de temps</li>
+                <li>Séparation de la structure (HTML) et du style (CSS)</li>
+            </ul>
+
+            <strong>Utilisation du ::after</strong>
+            <code>a::after {
+    content: "->";
+    color: var(--highlighted);
+}</code>
+
+            <strong>Résultat</strong>
+            <a class="after" href="#">
+                Poursuivre sur le lien
+            </a>
+
+            <div class="divider"></div>
+
+            <h3 class="title">Reproduire <span class="highlighted">cet effet</span></h3>
+
+            <strong>Vos idées ?</strong>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <strong>Reproduction de l'effet de surlignement</strong>
+            <code>span.highlighted::after {
+    content: "";<br>
+
+    background: var(--highlighted);
+    opacity: 0.5;
+    width: 100%;
+    height: 50%;<br>
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+ }</code>
+
+            <strong>Résultat</strong>
+            <span class="highlighted demo">
+                Admirez la beauté
+            </span>
+
+            <strong>Votre exercice</strong>
+
+            <p> Créez un paragraphe dont la première lettre sera plus grande que le reste. Vous en profiterez pour ajouter le symbole "<3" avant le texte.</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="divider"></div>
+
+
         </div>
+
     </section>
-
-    <div class="transition">
-        <span></span>
-    </div>
-
-    <section class="gare" data-scroll-section>
-        <div class="overlay">
-            <div class="title">
-                Ah, la <span>gare.</span>
-            </div>
-
-            <p>
-                Je vois toujours plein de monde à la gare. On est tous différents. D'ailleurs, comment il fait pour être
-                en short lui ? Là, c'est certain, on n'a pas le même ressenti face au froid.
-            </p>
-
-            <p>
-                Ça me fait penser aux
-                couleurs, on ne voit pas tous les mêmes nuances. C'est M. Robillard qui l'a dit. D'ailleurs pour la
-                robe, je la voyais <span>blanche et dorée</span>.
-            </p>
-
-            <strong>J'avais tort.</strong>
-
-            <p>
-                Du moins, j'avais tort de faire confiance à mes yeux. Ce n'est pas la première fois que j'y pense. Et si
-                mes yeux me mentaient <span>quotidiennement</span> ? Dans ce cas-là, quel est le relatif, quelle est la
-                vérité ?
-                Celle que les autres voient ? Et puis pourquoi la robe serait bleu et noir après tout ?
-            </p>
-
-            <strong>Les longueurs d'ondes ?</strong>
-
-            <p>
-                Mais certains animaux sont tetrachromates et ont probablement accès à plus de couleurs que nous, gueux
-                trichromates. Eux ont raison. Ah non, il existe aussi la pentachromatie.
-            </p>
-
-            <strong class="inc">On a tous tort.</strong>
-
-            <p>
-                Ou peut-être que je devrais juste accepter avoir des yeux <span>un peu bourrés</span>.
-            </p>
-        </div>
-    </section>
-
-    <div class="transition"></div>
-
-    <section class="rer" data-scroll-section>
-        <div class="overlay">
-            <div class="title">
-                Ah, le <span>RER</span> arrive.
-            </div>
-
-            <p>
-                On m'a toujours dit que le RER <span>pue</span>. Mais j'ai plus d'odorat depuis 7 mois... Je suppose que
-                ça a ses <span>avantages</span>.
-            </p>
-
-            <p>
-                Encore toi, short-man ! Vraiment, on ne perçoit pas le froid de la même façon.
-                Mais une
-                perception différente implique une interprétation différente. Est-ce que toi aussi, tu te dis que je
-                suis fou de porter un jean ? Non, je ne pense pas.
-            </p>
-
-            <strong class="inc">Sinon, tu serais vraiment <span>bizarre</span>.</strong>
-
-            <p>
-                J'y pense, mais la perception ne se résume pas à ce qu'on ressent. Pour moi, c'est un mélange de nos
-                expériences, de nos valeurs, de notre humeur et enfin de notre ressenti. Peut-être que sa résistance au
-                froid lui vient de son expérience dans un igloo.
-            </p>
-
-            <p>
-                Il a vécu dans un igloo ?<br>Ou alors, il a juste super
-                froid mais il adore les shorts. Attends, mais s'il a vécu dans un igloo, c'est quoi les
-                <span>limites</span> de son
-                corps ?
-            </p>
-            <p>
-                Finalement, peut-être que c'est moi qui n'ai jamais essayé de m'habiller en short à cette
-                période.
-            </p>
-
-            <strong>Mais peut-être que c'est normal.</strong>
-        </div>
-    </section>
-
-    <div class="transition"></div>
-
-    <section class="soleil" data-scroll-section>
-        <div class="overlay">
-            <div class="title">
-                Ah, les premiers rayons du <span>soleil</span>.
-            </div>
-
-            <p>
-                C'est agréable.
-            </p>
-
-            <strong>Merci, le soleil.</strong>
-
-            <p>
-                Je me demande quelle température il fait dans l'<span>espace</span>. Merci à Nicolas, 10 ans, qui a posé
-                cette
-                question sur un forum en ligne. Merci à la personne qui l'a aidé à écrire et à le soutenir dans sa
-                curiosité, c'est trop <span>cool</span>.
-            </p>
-
-            <p>
-                En moyenne, la température dans l'espace est
-                de -270 °C. C'est tout près du zéro absolu.
-            </p>
-
-            <strong>Ça me paraît logique maintenant.</strong>
-
-            <p>
-                Google m'a recommandé de
-                poursuivre mes recherches avec "Quelle température autour de l'ISS ?". Je viens d'apprendre que la
-                température de l'ISS varie entre -151 °C et 127 °C en fonction de son orientation face au soleil.
-            </p>
-
-            <strong class="inc">Merci Google.</strong>
-
-            <p>
-                C'est bien d'être <span>astronaute</span>. Ou peut-être pas. Je pense que c'est cool parce que<br><em>tu
-                te
-                lèves avec une vue incroyable, et en plus tu contribues à la science et aux progrès technologiques.</em>
-            </p>
-            <p>
-                C'est aussi flippant parce que <br>
-                <em>tu te lèves avec une vue incroyable, et en plus tu contribues à la science et aux
-                    progrès technologiques.</em>
-            </p>
-            <p>
-                En réalité, je pense que c'est quand même trop cool.
-            </p>
-
-            <strong>J'aimerais bien être astronaute.</strong>
-
-            <p>
-                Un jour, on rencontrera peut-être des astronautes <span>extraterrestres</span>. C'est fou de se dire que
-                c'est
-                quasiment impossible d'imaginer leurs formes. Leurs développements génétiques ont dû être complètement
-                différents. Mais, peut-être qu'ils n'ont pas de gènes... Peut-être qu'ils n'ont même pas de nez...
-            </p>
-
-            <strong>Peut-être qu'ils n'ont pas de short...</strong>
-        </div>
-    </section>
-
-    <div class="transition"></div>
-
-    <section class="cours" data-scroll-section>
-        <div class="overlay">
-            <div class="title">
-                Ah, déjà dix heures et mon cours est déjà bientôt terminé.
-            </div>
-            <div style="height: 50vh; display: flex; align-items: flex-end">
-                <p>Mattéo LECLERCQ</p>
-            </div>
-        </div>
-    </section>
-
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
