@@ -45,12 +45,17 @@
 
             <p style="margin: 70px 0 0;padding: 0;">Autre pseudo-éléments:</p>
             <ul>
+                <!--
+                Normalement on met rien d'autre que des li dans un ul mais là j'ai un peu la flemme, vous m'en voudrez pas <3
+                -->
                 <li style="font-weight: bold">::first-letter</li>
+                <p class="first-letter">Première lettre en rouge!</p>
                 <li style="font-weight: bold">::placeholder</li>
+                <input type="text" placeholder="Blabla normal :)">
+                <input class="placeholder-red" type="text" placeholder="Blabla en rouge :)">
                 <li style="font-weight: bold">::after et ::before ♥</li>
-                <li style="font-weight: bold">::marker (expérimental)</li>
-                <li style="font-weight: bold">::selection</li>
-                <li>::cue</li>
+                <li class="marker-red" style="font-weight: bold">::marker (expérimental)</li>
+                <li class="selection-red" style="font-weight: bold">::selection</li>
                 <li>::backdrop (expérimental)</li>
                 <li>::grammar-error (expérimental)</li>
                 <li>::spelling-error (expérimental)</li>

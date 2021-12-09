@@ -138,3 +138,25 @@ a.after::after {
 .demo {
     font-size: 3rem;
 }
+
+.first-letter::first-letter {
+    color:red;
+}
+
+.placeholder-red::placeholder {
+    color:red;
+}
+
+.placeholder-red {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.marker-red::marker {
+    color: red;
+}
+
+.selection-red::selection {
+    color:red;
+    background: var(--highlighted);
+}
